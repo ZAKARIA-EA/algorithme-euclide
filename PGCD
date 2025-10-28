@@ -1,0 +1,66 @@
+Définition du PGCD:
+
+Le PGCD (Plus Grand Commun Diviseur) de deux entiers naturels a et b est le plus grand nombre entier positif qui divise à la fois a et b.
+
+Autrement dit :
+
+PGCD(a, b) = le plus grand entier qui divise a et b sans laisser de reste.
+
+Algorithme d’Euclide:
+
+Algorithme Euclide
+Variables :
+   a, b, reste : Entiers
+
+Début
+   Écrire (" Algorithme d'Euclide pour le calcul du PGCD ")
+   Écrire ("Entrez le premier nombre : ")
+   Lire (a)
+   Écrire ("Entrez le deuxième nombre : ")
+   Lire (b)
+
+   Écrire ("Calcul du PGCD de ", a, " et ", b)
+
+   TANT QUE b ≠ 0 FAIRE
+       reste ← a MOD b
+       Écrire (a, " = ", b, " * (", a DIV b, ") + ", reste)
+       a ← b
+       b ← reste
+   FIN TANT QUE
+
+   Écrire ("Le PGCD est : ", a)
+Fin
+
+Exemples:
+
+ Exemple 1 : PGCD(252, 105)
+
+On divise 252 par 105 :
+252 = 105 × 2 + 42
+
+Puis on divise 105 par 42 :
+105 = 42 × 2 + 21
+
+Enfin, on divise 42 par 21 :
+42 = 21 × 2 + 0
+
+Quand le reste devient 0, on s’arrête.
+Le dernier diviseur non nul est 21, donc
+PGCD(252, 105) = 21
+
+ Exemple 2 : PGCD(54, 24)
+
+54 = 24 × 2 + 6
+24 = 6 × 4 + 0
+
+Le dernier reste non nul est 6, donc
+PGCD(54, 24) = 6
+
+ Exemple 3 : PGCD(48, 180)
+
+180 = 48 × 3 + 36
+48 = 36 × 1 + 12
+36 = 12 × 3 + 0
+
+Le dernier reste non nul est 12, donc
+PGCD(48, 180) = 12

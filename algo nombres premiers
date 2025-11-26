@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int estPremier(int x) {
+    if (x < 2)
+        return 0;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0)
+            return 0;
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Entrez un nombre n : ");
+    scanf("%d", &n);
+
+    printf("\n--- Tous les nombres de 1 à %d ---\n", n);
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+
+    printf("\n\n--- Après suppression des nombres non premiers ---\n");
+    for (int i = 1; i <= n; i++) {
+        if (estPremier(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
